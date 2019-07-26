@@ -12,7 +12,7 @@
 
 `where log.path like concat('%', articles.slug,'%')`
 
-`and authors.id = articles.author;`
+and authors.id = articles.author;`
 
 Which joins the tables authors,articles,log on the rows where the path column in the log table is like(similar to not necessairly the same as)
 	 the slug column in the articles table and where the id column in the authors table is equal to the author column in the articles table.
@@ -45,18 +45,103 @@ calculated the percentage,checked if it'S bigger than 1%,and finally
 added it with it's corresponding date to an array called result3.
 
 ## * How to run the program :
-From the terminal :
+1- Install Python version 2 or 3 :
 
-`CD <replace this with the path of the loganalysis file which you downloaded>`
-Just type **`python3 loganalysis.py`** in the terminal and the results of
-the queries should appear.
-If an error appears that psycopg2 is not a recognizable module,
-try **`python loganalysis.py`**.
-If the error still appears try **`pip3 install psycopg2`** (for mac)
-and type **`python3 loganalysis.py`** , or **`pip install psycopg2`** and then **`python loganalysis.py`**.
+[Click Me :)](https://www.python.org/downloads/)
 
-From pycharm :
+2-Install VirtualBox 
 
-Open the project and run it.
+[Click Me :)](https://www.virtualbox.org/wiki/Downloads)
+
+3-Install Vagrant :
+
+[Click me :)](https://www.vagrantup.com/downloads.html)
+
+4-Set up the files and directory for the database :
+
+Do the following fode blocks
+
+`mkdir <name>` (to make a working directory)
+
+`CD <name of the directory you created>`
+
+`vagrant init hashicorp/precise64`
+
+`vagrant box add hashicorp/precise64`
+
+then follow the **Using a Box** Section in the following link :
+
+[Click me :)](https://www.vagrantup.com/intro/getting-started/boxes.html)
+
+
+Download all the files in this repository in the vagrant Directory which you've created.
+
+now run these blocks of code : (from the terminal and you should be in the vagrant directory where Vagrant file is located)
+
+`Vagrant up` 
+
+Wait untill it ends, it will take a while depending on the speed of your internet connection..
+
+`Vagrant SSH`
+
+5- Setting up the database :
+now (all the files in the repository should be in the vagrant file you've created) .
+
+`cd /vagrant` 
+
+type `psql` 
+
+if postgres is not installed , 
+
+`sudo apt-get update`
+
+`sudo apt-get install postgresql-9.3 postgresql-contrib-9.3`
+
+if any thing goes wromg follow this link here [Click me :)](https://www.postgresql.org/download/linux/ubuntu/)
+
+after yo've typed **psql** type 
+
+`create database news`
+
+then ctrl+D to exit back to the command line
+
+and type this 
+
+`psql -d news -f newsdata.psql`
+
+now type 
+
+`psql news`
+
+you're in Congratulations
+
+6- install psycopg2  and run the code :
+
+`pip install psycopg2` for python 2
+
+`pip3 install psycopg2`
+
+ Run the **loganalysis.py** code from the terminal using the following line 
+
+`python loganalysis.py` for python 2
+
+`python3 loganalysis.py`` for python 3
+
+and finally :
+
+**`python3 loganalysis.py`** to run the code in python 3
+**`python loganalysis.py`** to run the code in python 2
+
+
+
+
+
+
+
+
+
+
+
+
 
 
