@@ -3,8 +3,7 @@
 ## * Views created :
 
 #### helper1:
-`Create view helper1 as `
-                
+`Create view helper1 as
                 select authors.id as authors_id,name as author_name,
                  title as articles_title,
                  slug,path,status,log.time::Date as day
