@@ -3,14 +3,16 @@
 ## * Views created :
 
 #### helper1:
-`Create view helper1 as
-                select authors.id as authors_id,name as author_name,
-                 title as articles_title,
-                 slug,path,status,log.time::Date as day
+`Create view helper1 as`                                     
+`select authors.id as authors_id,name as author_name,`
+`title as articles_title,`
+`slug,path,status,log.time::Date as day`
 
-                 from authors,articles,log
-                 where log.path like concat('%', articles.slug,'%')
-                 and authors.id = articles.author;`
+`from authors,articles,log`
+
+`where log.path like concat('%', articles.slug,'%')`
+
+`and authors.id = articles.author;`
 
 Which joins the tables authors,articles,log on the rows where the path column in the log table is like(similar to not necessairly the same as)
 	 the slug column in the articles table and where the id column in the authors table is equal to the author column in the articles table.
