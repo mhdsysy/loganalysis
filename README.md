@@ -99,7 +99,7 @@ if postgres is not installed ,
 
 if any thing goes wromg follow this link here [Click me :)](https://www.postgresql.org/download/linux/ubuntu/)
 
-after yo've typed **psql** type 
+after you've typed **psql** type 
 
 `create database news`
 
@@ -119,13 +119,13 @@ you're in Congratulations
 
 `pip install psycopg2` for python 2
 
-`pip3 install psycopg2`
+`pip3 install psycopg2` for python 3
 
  Run the **loganalysis.py** code from the terminal using the following line 
 
 `python loganalysis.py` for python 2
 
-`python3 loganalysis.py`` for python 3
+`python3 loganalysis.py` for python 3
 
 and finally :
 
